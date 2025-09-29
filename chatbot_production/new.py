@@ -1,4 +1,5 @@
 import random
+import os
 import json
 import pickle
 import numpy as np
@@ -13,7 +14,7 @@ lemmatizer = WordNetLemmatizer()
 nltk.download('punkt')
 nltk.download('wordnet')
 
-import os
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INTENTS_PATH = os.path.abspath(os.path.join(BASE_DIR, "intents.json"))
 
