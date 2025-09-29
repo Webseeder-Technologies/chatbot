@@ -1,0 +1,590 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "hi",
+        "hii",
+        "hiii",
+        "hiiii",
+        "helloo",
+        "helloooo",
+        "helo",
+        "helloooooo",
+        "helooo",
+        "hello",
+        "Hello",
+        "heyy",
+        "heyyy",
+        "heyyyyy",
+        "heyyyyyyy",
+        "heyyyyyy",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Hi there",
+        "What's up",
+        "How are you",
+        "Hey there",
+        "Greetings",
+        "Good day",
+        "Yo",
+        "What's going on",
+        "Is anyone there?",
+        "Hi WebSeeder",
+        "Can I ask you something?",
+        "Good afternoon"
+      ],
+      "responses": [
+        "Hello! 👋 Welcome to WebSeeder Technologies pvt.Ltd . How can I help you today? Looking for web or app solutions? WebSeeder Technologies specializes in web development, mobile app development, and digital marketing services.",
+        "Hi there! Ready to explore WebSeeder Technologies pvt.Ltd services? Let me know how I can assist you! We help businesses grow with innovative digital solutions, from custom websites to full-scale apps.",
+        "Greetings! What can I help you with? We offer web, app, and digital solutions at WebSeeder Technologies pvt.Ltd.Our team is passionate about crafting innovative tech solutions to boost your business.",
+        "Welcome to WebSeeder Technologies pvt.Ltd! 😊 What would you like to explore today?WebSeeder offers end-to-end digital solutions, helping brands thrive with cutting-edge technology.",
+        "Hi! Need help with anything specific? We're here to assist with all your digital needs!From building websites to developing apps, WebSeeder Technologies pvt.Ltd makes your digital goals a reality."
+      ]
+    },
+    {
+      "tag": "about",
+      "patterns": [
+        "What is WebSeeder?",
+        "i want to know u",
+        "who are you?",
+        "Tell me about WebSeeder",
+        "Who are you?",
+        "What does WebSeeder do?",
+        "Explain your company WebSeeder",
+        "What is your company about?",
+        "Describe WebSeeder as a company",
+        "What kind of company is WebSeeder?",
+        "What is your mission?",
+        "Give me details about WebSeeder",
+        "What industry are you in?",
+        "Are you a tech company?",
+        "Is WebSeeder a software company?",
+        "What’s your company vision?",
+        "Are you a digital agency?",
+        "What makes WebSeeder different?"
+      ],
+      "responses": [
+        "WebSeeder is a digital solutions company offering web development, app development, and marketing services.",
+        "We at WebSeeder specialize in creating innovative web and digital solutions for businesses.",
+        "WebSeeder helps organizations with modern digital transformation services.",
+        "We're a creative tech company focused on building digital experiences and applications.",
+        "WebSeeder is all about empowering businesses with technology, creativity, and smart digital strategies.",
+        "We design, develop, and deliver digital success for our clients — from startups to enterprises.",
+        "Our team is passionate about tech and driven by results, which makes us a go-to partner for digital growth."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How can I contact you?",
+        "Contact information",
+        "What is your email address?",
+        "what is your email?",
+        "contact?",
+        "email?",
+        "email",
+        "What is your phone number?",
+        "How do I reach WebSeeder?",
+        "Can I call WebSeeder?",
+        "How do I connect with WebSeeder?",
+        "Where can I send a message?",
+        "Share WebSeeder contact details",
+        "Give me your official email",
+        "How do I talk to someone at WebSeeder?",
+        "Can I message you?",
+        "What's your support email?",
+        "How can I get in touch?",
+        "Where is your office located?",
+        "Can I book a call?"
+      ],
+      "responses": [
+        "You can reach us via email at hello@webseeder.in or give us a call at  ‪+91-7898877166‬ . We’re here to help!",
+        "For inquiries, feel free to email us at hello@webseeder.in or call ‪+91-7898877166‬. We're happy to assist!",
+        "You can connect with us directly through our email at hello@webseeder.in or call  ‪+91-7898877166‬ for immediate support.",
+        "Need assistance? Reach out to us via email at hello@webseeder.in or contact us by phone at ‪+91-7898877166‬.",
+        "Have a question? Drop us an email at hello@webseeder.in or call ‪+91-7898877166‬. We’ll be happy to assist you!",
+        "You can contact us through email at hello@webseeder.in or call us at ‪+91-7898877166‬. We’re just a message or call away!",
+        "For any inquiries, you can email us at hello@webseeder.in or reach us at ‪+91-7898877166‬. We’re available to help!"
+]
+    },
+    {
+  "tag": "services",
+  "patterns": [
+    "What services do you provide?",
+    "what are your services?",
+    "service",
+    "services?",
+    "what all services are provided by u",
+    "Tell me about your services",
+    "What can you do for me?",
+    "Services",
+    "List your services",
+    "What kind of work do you do?",
+    "What solutions do you offer?",
+    "Do you provide app development?",
+    "Do you do digital marketing?",
+    "Do you build websites?",
+    "Do you offer AI or ML services?",
+    "Can you make mobile apps?",
+    "Do you do blockchain development?",
+    "What technical services do you offer?",
+    "What industries do you serve?"
+  ],
+  "responses": [
+    "We provide a complete range of digital services at WebSeeder, including:\n\n- 🌐 **Website Development**\n- 📱 **Hybrid Application Development**\n- 💻 **Custom Software Development & Automation**\n- 🤖 **AI & Machine Learning Solutions**\n- ⛓️ **Blockchain Development**\n- 🎯 **Branding & Digital Marketing**\n\nWould you like me to explain one of these in detail?",
+    "At WebSeeder, we help businesses grow with services like:\n✅ Website Development\n✅ Hybrid Mobile Applications\n✅ Custom Software & Automation\n✅ AI/ML-powered solutions\n✅ Blockchain Development\n✅ Branding & Digital Marketing\n\nWhich of these would you like to know more about?",
+    "Our services include:\n1. Website Development\n2. Hybrid Application Development\n3. Custom Software Development & Automation\n4. AI & Machine Learning Solutions\n5. Blockchain Development\n6. Branding & Digital Marketing\n\nWe tailor each service to your unique business needs 🚀"
+  ]
+},
+{
+  "tag": "projects",
+  "patterns": [
+    "Show me your projects",
+    "projects?",
+    "Portfolio",
+    "Work samples",
+    "Previous work",
+    "Your past work",
+    "Examples of your projects",
+    "Do you have a portfolio?",
+    "Show me your clients",
+    "What kind of projects have you done?",
+    "Can I see your work?",
+    "Do you have case studies?",
+    "Where can I see your previous apps or websites?",
+    "Can I view your recent projects?",
+    "Have you worked with any big brands?"
+  ],
+  "responses": [
+    "You can check out our portfolio at https://www.webseeder.in/narratives-we-crafted/",
+    "We have worked on a variety of projects in web and app development. Visit our website for details.",
+    "Our projects showcase innovation and creativity. See more at our projects page.",
+    "Yes, our portfolio features multiple industries and technologies. Have a look!",
+    "We proudly display our work across websites, apps, and marketing — check out our past projects!"
+  ]
+},
+{
+  "tag": "careers",
+  "patterns": [
+    "Do you have job openings?",
+    "Careers",
+    "internship?",
+    "Can I work at WebSeeder?",
+    "Hiring",
+    "Internship opportunities",
+    "Jobs at WebSeeder",
+    "Are you hiring?",
+    "I want to join your team",
+    "Work with WebSeeder",
+    "Any career opportunities?",
+    "How do I apply for a job?",
+    "Are there remote jobs?",
+    "Do you accept freshers?",
+    "Is WebSeeder hiring interns?",
+    "How can I start my career with WebSeeder?",
+    "Are there openings for developers?",
+    "Can I apply for a marketing position?"
+  ],
+  "responses": [
+    "We regularly post job openings on our website. Please check the careers section at http://www.webseeder.in.",
+    "You can apply for internships or jobs at WebSeeder by visiting our careers page.",
+    "We welcome talented individuals! Please keep an eye on our website for current openings.",
+    "We’re always on the lookout for passionate professionals — check out our job listings!",
+    "Whether you’re experienced or a fresher, we might have the right opportunity for you!",
+    "Our team is growing! Visit our Careers page to see where you fit in."
+  ]
+},
+{
+  "tag": "pricing",
+  "patterns": [
+    "How much does it cost?",
+    "cost?",
+    "Pricing",
+    "What are your rates?",
+    "Charges",
+    "How expensive are your services?",
+    "Tell me about your pricing",
+    "What’s the cost of your services?",
+    "Do you have packages?",
+    "How do you charge?",
+    "Give me your price details",
+    "Is there a price list?",
+    "Do you charge hourly?",
+    "Can I get a quote?",
+    "What’s your pricing model?",
+    "Is your pricing fixed or flexible?",
+    "Do you offer discounts?",
+    "Can I get a ballpark estimate?"
+  ],
+  "responses": [
+    "Our pricing depends on the type of service you choose. Please contact us for a customized quote.",
+    "We offer flexible pricing depending on your project requirements. Get in touch for details.",
+    "For pricing and packages, please visit our website or reach out to us directly.",
+    "Every project is unique, so we provide tailored pricing based on your goals and scope.",
+    "We’re happy to provide a detailed proposal once we know your requirements.",
+    "We offer both fixed and flexible pricing models depending on the scope of the project."
+  ]
+},
+ {
+      "tag": "default",
+      "patterns": [],
+      "responses": [
+        "I’m not sure I understood that. Could you rephrase? 🤔",
+        "Hmm, I don’t have an answer for that right now.",
+        "Sorry, I didn’t get that. Can you try asking differently?",
+        "Could you please clarify your question?",
+        "I’m here to help, but I need a bit more info to answer that."
+      ]
+    },
+{
+  "tag": "Why choose webseeder",
+  "patterns": [
+    "Why pick WebSeeder for digital solutions?",
+    "What makes WebSeeder stand out?",
+    "Why should I choose WebSeeder over others?",
+    "Why WebSeeder?",
+    "Why is WebSeeder different?",
+    "Is WebSeeder reliable?",
+    "How is WebSeeder better than other agencies?",
+    "Why would I hire WebSeeder?",
+    "Why do companies choose WebSeeder?"
+  ],
+  "responses": [
+    "Choose WebSeeder because they provide innovative solutions, are customer‑centric, result‑driven, and serve as a one-stop shop for all your digital needs.",
+    "WebSeeder stands out with innovation at its core—they focus on you, deliver real results, and combine all the digital services you need under one roof.",
+    "WebSeeder differentiates itself through a few strengths: groundbreaking innovation, a customer-first philosophy, measurable outcomes, and comprehensive service coverage—from web and app development to marketing and branding.",
+    "Clients choose WebSeeder for their blend of creativity, strategy, and reliability.",
+    "WebSeeder delivers not just services—but success. That's why businesses trust us.",
+    "We prioritize long-term success, not just short-term delivery — that’s what makes WebSeeder different."
+  ]
+},
+{
+  "tag": "About WebSeeder’s Approach and Philosophy",
+  "patterns": [
+    "What is WebSeeder’s philosophy?",
+    "How does WebSeeder work with clients?",
+    "What’s their working style and values?",
+    "What are WebSeeder's principles?",
+    "How does WebSeeder approach new projects?",
+    "Tell me about WebSeeder's values",
+    "How does WebSeeder handle client collaboration?",
+    "What is your approach to project management?",
+    "How do you ensure client satisfaction?"
+  ],
+  "responses": [
+    "WebSeeder is customer‑centric—they demystify tech, focus on results, and aim to bring your vision to life.",
+    "WebSeeder listens and collaborates deeply with clients. They simplify tech, put the customer first, and let their results do the talking.",
+    "WebSeeder positions clients as heroes. They break down tech barriers, tailor understandable solutions, prioritize your goals, and let outcomes speak for themselves.",
+    "Their philosophy is built on trust, transparency, and turning complexity into clarity.",
+    "WebSeeder values long-term partnerships and builds solutions with empathy and purpose.",
+    "We believe in working with clients as partners, not just as service providers."
+  ]
+},
+{
+  "tag": "Work Culture",
+  "patterns": [
+    "Can you tell me about your work culture?",
+    "What is the team environment like?",
+    "How’s the employee experience at WebSeeder?",
+    "Is WebSeeder a good place to work?",
+    "What kind of people work at WebSeeder?",
+    "Describe the culture at WebSeeder",
+    "How do teams work at WebSeeder?",
+    "What’s the atmosphere like at WebSeeder?",
+    "Do employees enjoy working there?"
+  ],
+  "responses": [
+    "At WebSeeder, we value innovation, collaboration, and continuous learning. It’s a friendly and fast-paced environment.",
+    "It’s a great place to grow! We work hard, learn fast, and have fun while doing it.",
+    "We foster a supportive and creative workspace where every team member is encouraged to contribute, learn, and grow professionally.",
+    "WebSeeder promotes a healthy, inclusive, and empowering environment for all team members.",
+    "The culture is dynamic, driven, and growth-oriented — perfect for thinkers and doers alike.",
+    "WebSeeder encourages transparency, open communication, and innovation across all teams."
+  ]
+},
+{
+  "tag": "Refund policy",
+  "patterns": [
+    "What if I don’t like the final product?",
+    "refund policy?",
+    "Do you offer revisions or refunds?",
+    "How do you handle unsatisfied clients?",
+    "Is there a refund policy?",
+    "Can I get my money back?",
+    "What happens if the project doesn't meet expectations?",
+    "How do you resolve client complaints?",
+    "What if I'm not happy with the result?",
+    "Do you guarantee satisfaction?"
+  ],
+  "responses": [
+    "We value client satisfaction. That’s why we include feedback rounds and revisions in our process to ensure you're happy with the result.",
+    "Before final delivery, we go through testing and feedback to make sure everything meets your expectations.",
+    "We’ll work with you to make it right. Our priority is to deliver a solution that truly works for your business.",
+    "If you're not satisfied, we’ll evaluate the situation and do our best to resolve the issue with professionalism.",
+    "Your success is our goal—our process is designed to avoid dissatisfaction through collaboration and transparency.",
+    "We don't often get refund requests, but in such cases, we assess the scope, progress, and offer fair solutions."
+  ]
+},
+{
+  "tag": "Support and Maintenance policy",
+  "patterns": [
+    "Will you help after the project is done?",
+    "Do you offer post-launch support?",
+    "Can I get maintenance services?",
+    "What kind of support do you offer after delivery?",
+    "Do you offer technical maintenance?",
+    "Will you fix bugs after deployment?",
+    "How long does support last after the project?",
+    "Do you offer service-level agreements?",
+    "What kind of long-term support can I expect?"
+  ],
+  "responses": [
+    "Yes, we offer support and maintenance packages based on your needs — from bug fixes to updates.",
+    "After launch, we’re still here for you! Ongoing support is available to keep everything running smoothly.",
+    "You can opt for monthly or on-demand maintenance depending on your project.",
+    "Our team provides proactive and reactive support to ensure long-term stability.",
+    "From quick fixes to long-term upgrades — we’ve got your back post-launch.",
+    "We offer support agreements based on response time, uptime, and criticality — customizable for every business."
+]
+},
+{
+  "tag": "about_web_development",
+  "patterns": [
+    "What is web development?",
+    "what exactly is web development?",
+    "Tell me about web development",
+    "can you explain what is web development?",
+    "web dev meaning?",
+    "Explain web development",
+    "Web development meaning"
+  ],
+  "responses": [
+    "🌐 Web development is the process of building websites and web applications that run smoothly on browsers. It involves frontend (UI/UX), backend (server & database), and integration with business logic.",
+    "🌐 Web development is the process of creating, building, and maintaining websites and web applications. It includes:\n\n- **Front-End Development (Client-Side):** Designing the user interface (UI) that users interact with directly using HTML, CSS, JavaScript, React, etc.\n- **Back-End Development (Server-Side):** Managing server logic, databases, and APIs using technologies like Node.js, Django, Flask, or PHP.\n- **Full-Stack Development:** A combination of both front-end and back-end.\n\nWeb development ensures websites are fast, responsive, secure, and user-friendly."
+  ]
+},
+{
+      "tag": "website_development_services",
+      "patterns": [
+        "Tell me about website development services",
+        "what do you provide in web development?",
+        "what are your web devlopment services?",
+        "tell me about web development service",
+        "web services?",
+        "web development services",
+        "web-development services",
+        "Do you make websites?",
+        "Can you build me a website?",
+        "Website developmentservices?",
+        "I need a website",
+        "Do you design websites?",
+        "Web solutions",
+        "web solutions",
+        "Create a site for me"
+      ],
+      "responses": [
+        "🌐 At WebSeeder, we provide **end-to-end website development services**, including:\n- Custom Website Design\n- Responsive Development\n- E-commerce Solutions\n- CMS (WordPress, etc.)\n- SEO Optimization\n\nWe make sure your website is **fast, secure, and user-friendly**."
+      ]
+    },
+    {
+  "tag": "about_app_development",
+  "patterns": [
+    "What is app development?",
+    "what is app devlopment?",
+    "what is android development?",
+    "explain app devlopment",
+    "app dev meaning?",
+    "Tell me about app development",
+    "Explain app development",
+    "App development meaning"
+  ],
+  "responses": [
+        "📱 App development is the process of creating mobile applications for platforms like **Android** and **iOS**. It covers:\n\n- **Native App Development:** Apps built specifically for one platform (Java/Kotlin for Android, Swift for iOS).\n- **Cross-Platform Development:** Single codebase apps that run on multiple platforms (Flutter, React Native).\n- **UI/UX Design:** Ensuring apps are intuitive, visually appealing, and easy to use.\n- **App Deployment & Maintenance:** Publishing apps on Play Store/App Store and keeping them updated.\n\nApps can be used for e-commerce, social networking, productivity, or entertainment.\n"
+  ]
+      },
+    {
+      "tag": "hybrid_app_development_services",
+      "patterns": [
+        "Tell me about app development services",
+        "what are your app development services?",
+        "what do you provide in app development?",
+        "app development services",
+        "app services",
+        "android development services",
+        "IOS services",
+        "Do you make apps?",
+        "Can you build me an app?",
+        "Mobile app services",
+        "Hybrid application development",
+        "I need an Android app",
+        "I need an iOS app",
+        "Cross-platform apps"
+      ],
+      "responses": [
+
+        "✅ At Webseeder Technologies pvt.Ltd , our App Development Services include:\n\n1️⃣ Native Android & iOS App Development\n2️⃣ Cross-platform Apps (Flutter, React Native)\n3️⃣ Enterprise & Business Apps\n4️⃣ Educational & E-learning Apps\n5️⃣ On-demand Service Apps\n6️⃣ Maintenance & Support\n\n👉 We make apps that are scalable, user-friendly, and business-driven."
+      ]
+    },
+    {
+      "tag": "custom_software",
+      "patterns": [
+        "Tell me about custom software",
+        "custom software?",
+        "software development",
+        "automation?",
+        "custom software",
+        "Do you build custom software?",
+        "Automation services",
+        "I need software for my business",
+        "Custom solutions",
+        "Software development"
+      ],
+      "responses": [
+        "💻 We specialize in **Custom Software Development & Automation**.\nFrom internal tools to enterprise automation, we build software that fits **your exact needs**.",
+        "Our services cover:\n- Business process automation\n- Scalable enterprise apps\n- Cloud-based platforms\n- Secure & performance-driven solutions"
+      ]
+    },
+    {
+  "tag": "about_aiml",
+  "patterns": [
+    "explain aiml",
+    "what is ai?",
+    "what is aiml?",
+    "What is AI and ML?",
+    "Can you explain ai ml?",
+    "what is ai ml?",
+    "Tell me about AI/ML",
+    "Explain artificial intelligence and machine learning",
+    "What is machine learning and artificial intelligence?",
+    "AI/ML meaning"
+  ],
+  "responses": [
+    "🤖 Artificial Intelligence (AI) and Machine Learning (ML) are technologies that enable systems to analyze data, learn patterns, and make decisions with minimal human intervention.",
+    "🤖 AI (Artificial Intelligence) and ML (Machine Learning) are technologies that allow machines to simulate human intelligence and learn from data.\n\n- **AI:** Focuses on making systems capable of performing tasks that usually require human intelligence, like decision-making, problem-solving, or understanding language.\n- **ML:** A subset of AI where systems learn patterns from data and improve automatically without being explicitly programmed.\n\nPractical uses of AI/ML include:\n- Predictive analytics 📊 (forecasting trends)\n- Computer vision 👁️ (face recognition, image detection)\n- NLP 🗣️ (chatbots, voice assistants)\n- Recommendation systems 🎯 (Netflix, Amazon suggestions)\n"
+  ]
+},
+    {
+      "tag": "ai_ml_services",
+      "patterns": [
+        "Tell me about AI solutions",
+        "what do you provide in ai ml?",
+        "aiml service/servvices",
+        "ai services",
+        "ml services",
+        "AIML services",
+        "AI and ML service",
+        "ai and ml services",
+        "Aritifical intelligence services",
+        "machine learning services",
+        "Aritifical intelligence service",
+        "machine learning service",
+        "Do you provide machine learning service?",
+        "AI services",
+        "ML services",
+        "AI & ML development",
+        "Artificial intelligence solutions",
+        "Data science services"
+      ],
+      "responses": [
+        "Our AI/ML expertise includes:\n- Predictive analytics 📊\n- Natural Language Processing (NLP)\n- Computer Vision 🖼️\n- Recommendation Systems\n- Intelligent automation"
+      ]
+    },
+    {
+  "tag": "about_blockchain",
+  "patterns": [
+    "What is blockchain development?",
+    "explain blockchain",
+    "what exactly is bloackchain?",
+    "can you please explain blockchain?",
+    "can you tell what bloackchain is?",
+    "bloackchain?",
+    "bloackchain meaning?",
+    "Tell me about blockchain",
+    "Explain blockchain development",
+    "Blockchain meaning"
+  ],
+  "responses": [
+    "🔗 Blockchain development is the process of building decentralized applications and solutions using distributed ledger technology. It ensures transparency, immutability, and security in digital transactions.",
+  "🔗 Blockchain is a **decentralized and secure digital ledger technology** that records transactions across many computers in a way that cannot be altered.\n\nIt is the foundation of **cryptocurrencies (Bitcoin, Ethereum, etc.)** but has uses beyond finance, such as:\n\n- **Smart Contracts:** Self-executing contracts with predefined rules.\n- **Decentralized Applications (dApps):** Apps running on blockchain instead of centralized servers.\n- **NFTs & Tokenization:** Unique digital assets verified through blockchain.\n- **Secure Data Sharing:** Trusted record-keeping without central authority.\n\nBlockchain ensures **transparency, immutability, and trust** in digital interactions.\n"
+  ]
+},
+    {
+      "tag": "blockchain_services",
+      "patterns": [
+        "Tell me about blockchain services",
+        "what are your bloackchain services?",
+        "what do you provide in bloachchain?",
+        "what bloackchain services do you provide?",
+        "blockchain services",
+        "Blockchain service",
+        "tell me about blockchain service",
+        "blockchain services?",
+        "Do you work on blockchain?",
+        "Blockchain services",
+        "Smart contracts",
+        "Crypto solutions",
+        "Decentralized apps",
+        "Dapps development"
+      ],
+      "responses": [
+        "⛓️ WebSeeder offers **Blockchain Development services** including:\n- Smart contracts\n- Crypto wallets\n- Decentralized applications (Dapps)\n- Blockchain consulting"
+      ]
+    },
+    {
+      "tag": "branding and digital marketing",
+      "patterns": [
+        "Tell me about digital marketing",
+        "tell me about brand marketing",
+        "digital marketing",
+        "brand marketing",
+        "Do you do branding?",
+        "SEO services",
+        "Social media marketing",
+        "Brand identity",
+        "Marketing solutions",
+        "Online advertising"
+      ],
+      "responses": [
+        "🎯 Our **Branding & Digital Marketing services** help your business grow online:\n- SEO Optimization\n- Social Media Campaigns 📢\n- Paid Advertising (Google/Facebook Ads)\n- Brand Identity & Strategy\n- Content Marketing",
+        "We make sure your brand reaches the **right audience at the right time**."
+      ]
+    },
+    {
+    "tag": "goodbye",
+    "patterns": [
+    "bye",
+    "byee",
+    "byeee!",
+    "thankyouuu",
+    "thankyou",
+    "Bye",
+    "thanku",
+    "thankyou!",
+    "goodbye",
+    "see you later",
+    "talk to you soon",
+    "catch you later",
+    "see ya",
+    "ok bye",
+    "thanks bye",
+    "see you",
+    "thanks for helping",
+    "later",
+    "thenks!",
+    "thenks"
+  ],
+  "responses": [
+    "👋 Goodbye! Have a great day ahead!",
+    "😊 It was nice talking to you. See you soon!",
+    "🙌 Take care! Come back anytime if you need more help."
+  ]
+}
+
+  ]
+}
+
+
+
