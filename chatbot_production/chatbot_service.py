@@ -12,7 +12,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 nltk_data_path = os.path.join(BASE_DIR, ".venv", "nltk_data")
 
 
-
 # Add nltk_data_path to nltk's search paths if not already present
 if nltk_data_path not in nltk.data.path:
     nltk.data.path.append(nltk_data_path)
