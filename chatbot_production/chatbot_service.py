@@ -8,6 +8,7 @@ from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 import zipfile
 
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 nltk_data_path = os.path.join(BASE_DIR, ".venv", "nltk_data")
 
@@ -28,11 +29,14 @@ def unzip_wordnet_if_needed():
 
     if not os.path.isdir(wordnet_dir) and os.path.isfile(wordnet_zip):
         print(f"Extracting {wordnet_zip} to {corpora_dir} ...")
+        
         with zipfile.ZipFile(wordnet_zip, 'r') as zip_ref:
             zip_ref.extractall(corpora_dir)
         print("Extraction done.")
+       
     else:
         print("Wordnet already extracted or zip missing.")
+        
 
 
 # print("NLTK data after adding:", nltk.data.path)
@@ -66,7 +70,6 @@ check_nltk_resources()
 lemmatizer = WordNetLemmatizer()
 
 # Paths
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INTENTS_PATH = os.path.join(BASE_DIR, "intents.json")
 
 
@@ -116,7 +119,7 @@ def get_response(user_input):
     if not intents_list:
         return random.choice([
             "🤔 Sorry, I didn’t understand that. Could you rephrase?",
-            "⚡ I’m still learning! Can you try asking differently?",
+            "⚡ I'm still learning! Can you try asking differently?",
             "🙋 You can ask me about our services like web development, app development, AI solutions, and more!"
         ])
 
