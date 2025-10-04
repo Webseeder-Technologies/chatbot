@@ -1,13 +1,12 @@
 import random
 import json
 import pickle
+import zipfile
 import numpy as np
 import os
 import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
-import zipfile
-
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 nltk_data_path = os.path.join(BASE_DIR, ".venv", "nltk_data")
