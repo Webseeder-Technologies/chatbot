@@ -4,6 +4,12 @@ from fastapi.responses import HTMLResponse
 from fastapi.security import HTTPBearer
 from brotli_asgi import BrotliMiddleware  # https://github.com/fullonic/brotli-asgi
 
+from fastapi import WebSocket, WebSocketDisconnect
+import uvicorn
+from models.Websocket_handler import handle_chat_message
+
+
+
 
 app = FastAPI()
 
@@ -47,6 +53,28 @@ async def read_root():
     </html>
     """
     return html_content
+
+
+
+
+@app.websocket("/ws/chat")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        while True:
+            data = await websocket.receive_text()
+
+            response = handle_chat_message(data)
+
+            await websocket.send_text(response)
+
+    except WebSocketDisconnect:
+        print("Client disconnected")
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
 
 
 # for Authorization: Bearer token header
