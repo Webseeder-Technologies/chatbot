@@ -55,8 +55,8 @@ async def read_root():
 # can add modules having api calls below
 # example : 
 # import module_name
-
-
+from api import router as chatbot_router
+app.include_router(chatbot_router, prefix="/api", tags=["Chatbot"])
 
 
 # initiate
