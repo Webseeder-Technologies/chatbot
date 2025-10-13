@@ -1,8 +1,9 @@
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from fastapi import WebSocket, WebSocketDisconnect,FastAPI
 from pydantic import BaseModel
 from models.chatbot_service import get_response   
 
-router = APIRouter()
+app = FastAPI()
+
 
 # Request model
 class Message(BaseModel):
@@ -10,14 +11,14 @@ class Message(BaseModel):
 
 
 #  REST API Endpoint
-@router.post("/chat")
+@app.post("/chat")
 async def chat(msg: Message):
     response = get_response(msg.message)
     return {"response": response}
 
 
 #  WebSocket Endpoint
-@router.websocket("/ws/chat")
+@app.websocket("/ws/chat")
 async def websocket_chat(websocket: WebSocket):
     await websocket.accept()
     try:
