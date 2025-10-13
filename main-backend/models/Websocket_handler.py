@@ -3,14 +3,46 @@ import random
 import os
 import nltk
 from nltk.stem import WordNetLemmatizer
+import logging
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+logger= logging.getLogger(__name__)
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    logger.info("Downloading punkt tokenizer...")
+    nltk.download('punkt', quiet=True)
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    logger.info("Downloading wordnet...")
+    nltk.download('wordnet', quiet=True)
 
 lemmatizer = WordNetLemmatizer()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INTENTS_PATH = os.path.join(BASE_DIR, "intents.json")
 
-with open(INTENTS_PATH, "r", encoding="utf-8") as f:
-    intents = json.load(f)
+try:
+    with open(INTENTS_PATH, "r", encoding="utf-8") as f:
+        intents = json.load(f)
+
+    if not isinstance(intents, dict) or "intents" not in intents:
+        raise ValueError("intents.json must contain an 'intents' key with a list")
+    if not isinstance(intents["intents"], list):
+        raise ValueError("'intents' must be a list")
+
+except FileNotFoundError:
+    logger.error(f"intents.json not found at {INTENTS_PATH}")
+    raise
+except (json.JSONDecodeError, ValueError) as e:
+    logger.error(f"Invalid intents.json format: {e}")
+    raise
+
 
 
 def tokenize_and_lemmatize(sentence):
@@ -20,16 +52,26 @@ def tokenize_and_lemmatize(sentence):
 
 
 def find_intent(user_message: str):
-    """Find the best matching intent for a user message."""
-    tokens = tokenize_and_lemmatize(user_message)
+    patterns = []
+    pattern_intent_map = []
 
     for intent in intents["intents"]:
         for pattern in intent["patterns"]:
-            pattern_tokens = tokenize_and_lemmatize(pattern)
-            if all(word in tokens for word in pattern_tokens):
-                return intent
+            patterns.append(pattern)
+            pattern_intent_map.append(intent)
+
+    vectorizer = TfidfVectorizer().fit_transform([user_message] + patterns)
+    similarities = cosine_similarity(vectorizer[0:1], vectorizer[1:]).flatten()
+
+    best_idx = similarities.argmax()
+    best_score = similarities[best_idx]
+
+    if best_score >= 0.3:  # threshold
+        return pattern_intent_map[best_idx]
 
     return None
+
+
 
 
 def handle_chat_message(user_message: str) -> str:
@@ -39,4 +81,4 @@ def handle_chat_message(user_message: str) -> str:
     if intent:
         return random.choice(intent["responses"])
     else:
-        return "Sorry, I didn’t understand that. Can you rephrase?"
+        return "Sorry, I didn't understand that. Can you rephrase?"

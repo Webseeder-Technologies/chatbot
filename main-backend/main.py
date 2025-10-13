@@ -7,6 +7,8 @@ from brotli_asgi import BrotliMiddleware  # https://github.com/fullonic/brotli-a
 from fastapi import WebSocket, WebSocketDisconnect
 import uvicorn
 from models.Websocket_handler import handle_chat_message
+from fastapi.responses import FileResponse
+import os
 
 
 
@@ -71,9 +73,13 @@ async def websocket_endpoint(websocket: WebSocket):
     except WebSocketDisconnect:
         print("Client disconnected")
 
+@app.get("/chat", response_class=HTMLResponse)
+async def get_chat():
+    html_path = os.path.join(os.path.dirname(__file__), "frontend","index.html")
+    if not os.path.exists(html_path):
+        return HTMLResponse("<h1>index.html not found</h1>")
+    return FileResponse(html_path)
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
 
 
 
