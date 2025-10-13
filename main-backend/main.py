@@ -55,7 +55,7 @@ async def read_root():
 # can add modules having api calls below
 # example : 
 # import module_name
-from api import app
+import api
 
 # initiate
 # api_roles.get_admin_apis()
