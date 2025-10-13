@@ -62,15 +62,6 @@ async def read_root():
 
 @app.websocket("/ws/chat")
 async def websocket_endpoint(websocket: WebSocket):
-    """
-    WebSocket endpoint for real-time chat with the bot.
-
-    Improvements made:
-    1. Structured logging for connections and disconnections.
-    2. Try-except around handle_chat_message to prevent server crash on bad input.
-    3. Clear logging on any errors.
-    4. Can be extended with message size limits or rate limiting in future.
-    """
     await websocket.accept()
     logger.info(f"WebSocket client connected: {websocket.client}")
 
