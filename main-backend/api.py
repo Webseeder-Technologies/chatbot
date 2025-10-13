@@ -1,8 +1,9 @@
-from fastapi import WebSocket, WebSocketDisconnect,FastAPI
+from fastapi import WebSocket, WebSocketDisconnect
+from main import app
 from pydantic import BaseModel
 from models.chatbot_service import get_response   
 
-app = FastAPI()
+# app = FastAPI()
 
 
 # Request model
