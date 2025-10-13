@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.security import HTTPBearer
 from brotli_asgi import BrotliMiddleware  # https://github.com/fullonic/brotli-asgi
 
+import logging
 from fastapi import WebSocket, WebSocketDisconnect
 import uvicorn
 from models.Websocket_handler import handle_chat_message
@@ -61,17 +62,31 @@ async def read_root():
 
 @app.websocket("/ws/chat")
 async def websocket_endpoint(websocket: WebSocket):
+    """
+    WebSocket endpoint for real-time chat with the bot.
+
+    Improvements made:
+    1. Structured logging for connections and disconnections.
+    2. Try-except around handle_chat_message to prevent server crash on bad input.
+    3. Clear logging on any errors.
+    4. Can be extended with message size limits or rate limiting in future.
+    """
     await websocket.accept()
+    logger.info(f"WebSocket client connected: {websocket.client}")
+
     try:
         while True:
-            data = await websocket.receive_text()
+            try:
+                data = await websocket.receive_text()
+                response = handle_chat_message(data)
 
-            response = handle_chat_message(data)
-
+            except Exception as e:
+                logger.exception(f"Error processing message: {e}")
+                response = "Sorry, an error occurred. Please try again."
             await websocket.send_text(response)
 
     except WebSocketDisconnect:
-        print("Client disconnected")
+        logger.info(f"WebSocket client disconnected: {websocket.client}")
 
 @app.get("/chat", response_class=HTMLResponse)
 async def get_chat():
