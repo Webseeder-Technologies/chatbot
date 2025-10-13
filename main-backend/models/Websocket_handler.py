@@ -52,27 +52,30 @@ def tokenize_and_lemmatize(sentence):
 
 
 def find_intent(user_message: str):
+
     patterns = []
     pattern_intent_map = []
 
     for intent in intents["intents"]:
-        for pattern in intent["patterns"]:
+        for pattern in intent.get("patterns", []):
             patterns.append(pattern)
             pattern_intent_map.append(intent)
 
-    vectorizer = TfidfVectorizer().fit_transform([user_message] + patterns)
-    similarities = cosine_similarity(vectorizer[0:1], vectorizer[1:]).flatten()
+    if not patterns:
+        return None
 
+    try:
+        vectorized = TfidfVectorizer().fit_transform([user_message] + patterns)
+    except ValueError:
+        return None
+
+    similarities = cosine_similarity(vectorized[0:1], vectorized[1:]).flatten()
     best_idx = similarities.argmax()
     best_score = similarities[best_idx]
 
-    if best_score >= 0.3:  # threshold
+    if best_score >= 0.3:
         return pattern_intent_map[best_idx]
-
     return None
-
-
-
 
 def handle_chat_message(user_message: str) -> str:
     """Return response strictly from intents.json"""

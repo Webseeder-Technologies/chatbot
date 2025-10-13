@@ -11,6 +11,7 @@ from models.Websocket_handler import handle_chat_message
 from fastapi.responses import FileResponse
 import os
 
+logger= logging.getLogger(__name__)
 
 
 
