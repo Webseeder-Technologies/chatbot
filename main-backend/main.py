@@ -4,6 +4,16 @@ from fastapi.responses import HTMLResponse
 from fastapi.security import HTTPBearer
 from brotli_asgi import BrotliMiddleware  # https://github.com/fullonic/brotli-asgi
 
+import logging
+from fastapi import WebSocket, WebSocketDisconnect
+import uvicorn
+from models.Websocket_handler import handle_chat_message
+from fastapi.responses import FileResponse
+import os
+
+logger= logging.getLogger(__name__)
+
+
 
 app = FastAPI()
 
@@ -47,6 +57,37 @@ async def read_root():
     </html>
     """
     return html_content
+
+
+
+
+@app.websocket("/ws/chat")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    logger.info(f"WebSocket client connected: {websocket.client}")
+
+    try:
+        while True:
+            try:
+                data = await websocket.receive_text()
+                response = handle_chat_message(data)
+
+            except Exception as e:
+                logger.exception(f"Error processing message: {e}")
+                response = "Sorry, an error occurred. Please try again."
+            await websocket.send_text(response)
+
+    except WebSocketDisconnect:
+        logger.info(f"WebSocket client disconnected: {websocket.client}")
+
+@app.get("/chat", response_class=HTMLResponse)
+async def get_chat():
+    html_path = os.path.join(os.path.dirname(__file__), "frontend","index.html")
+    if not os.path.exists(html_path):
+        return HTMLResponse("<h1>index.html not found</h1>")
+    return FileResponse(html_path)
+
+
 
 
 # for Authorization: Bearer token header
