@@ -6,68 +6,17 @@ import os
 import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
-import zipfile
-
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-nltk_data_path = os.path.join(BASE_DIR, ".venv", "nltk_data")
-
-
-# Add nltk_data_path to nltk's search paths if not already present
-if nltk_data_path not in nltk.data.path:
-    nltk.data.path.append(nltk_data_path)
-
-def unzip_wordnet_if_needed():
-    """
-    When nltk downloads wordnet in a virtualenv, it sometimes
-    saves it as a zip file instead of extracted folder.
-    This function extracts wordnet.zip if it exists.
-    """
-    corpora_dir = os.path.join(nltk_data_path, "corpora")
-    wordnet_dir = os.path.join(corpora_dir, "wordnet")
-    wordnet_zip = os.path.join(corpora_dir, "wordnet.zip")
-
-    if not os.path.isdir(wordnet_dir) and os.path.isfile(wordnet_zip):
-        print(f"Extracting {wordnet_zip} to {corpora_dir} ...")
-        
-        with zipfile.ZipFile(wordnet_zip, 'r') as zip_ref:
-            zip_ref.extractall(corpora_dir)
-        print("Extraction done.")
-       
-    else:
-        print("Wordnet already extracted or zip missing.")
-        
-
-
-# print("NLTK data after adding:", nltk.data.path)
-
-def check_nltk_resources():
-    """
-    Checks if required nltk resources are available.
-    If not found, tries to unzip wordnet.zip,
-    then attempts to download missing resources automatically.
-    Raises RuntimeError if resources still missing after this.
-    """
-     
-    required_resources = ["tokenizers/punkt", "corpora/wordnet"]
-    missing = []
-    for resource in required_resources:
-        try:
-            nltk.data.find(resource)
-        except LookupError:
-            missing.append(resource)
-
-    if missing:
-        raise RuntimeError(
-            f"Missing NLTK resources: {', '.join(missing)}. "
-            "Please install them at build or deploy time using nltk.download(). "
-            "For example, run: python -m nltk.downloader punkt wordnet"
-        )
-    
-unzip_wordnet_if_needed()
-check_nltk_resources() 
 
 lemmatizer = WordNetLemmatizer()
+
+# Paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+# Download NLTK resources (once)
+nltk.download("punkt")
+nltk.download("wordnet")
+
 
 # Paths
 INTENTS_PATH = os.path.join(BASE_DIR, "intents.json")
