@@ -3,9 +3,6 @@ from main import app
 from pydantic import BaseModel
 from models.chatbot_service import get_response   
 
-# app = FastAPI()
-
-
 # Request model
 class Message(BaseModel):
     message: str
