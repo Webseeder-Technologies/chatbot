@@ -99,7 +99,6 @@ async def get_chat():
 
 
 
-
 # initiate
 # api_roles.get_admin_apis()
 # imp: This function needs to be called at the very last AFTER all the py modules are loaded.
