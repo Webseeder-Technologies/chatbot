@@ -1,4 +1,4 @@
-from fastapi import WebSocket, WebSocketDisconnect
+from fastapi import WebSocket, WebSocketDisconnect, HTTPException
 from main import app
 from pydantic import BaseModel
 from models.chatbot_service import get_response   
@@ -11,8 +11,15 @@ class Message(BaseModel):
 #  REST API Endpoint
 @app.post("/chat")
 async def chat(msg: Message):
-    response = get_response(msg.message)
-    return {"response": response}
+    try:
+        response = get_response(msg.message)
+        return {"response": response}
+    except ValueError as e:
+        print(f"Invalid input: {e}")
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        print("Error processing chat request")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 
 #  WebSocket Endpoint
