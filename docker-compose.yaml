@@ -1,0 +1,9 @@
+services:
+  webseeder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: webseeder-chatbot
+    ports:
+      - "5700:5700"
+    restart: unless-stopped
