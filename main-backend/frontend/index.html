@@ -124,7 +124,10 @@
     };
 
     socket.onmessage = (event) => {
-      addBotMessage(event.data);
+      const formattedText = event.data
+        .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // bold
+        .replace(/\n/g, "<br>"); // line breaks
+      addBotMessage(formattedText);
     };
 
     socket.onclose = () => {
@@ -153,10 +156,10 @@
       chatBox.scrollTop = chatBox.scrollHeight;
     }
 
-    function addBotMessage(text) {
+    function addBotMessage(htmlText) {
       const msg = document.createElement('div');
       msg.classList.add('message', 'bot-message');
-      msg.textContent = text;
+      msg.innerHTML = htmlText; 
       chatBox.appendChild(msg);
       chatBox.scrollTop = chatBox.scrollHeight;
     }
