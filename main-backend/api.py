@@ -18,7 +18,7 @@ async def chat(msg: Message):
         print(f"Invalid input: {e}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        print("Error processing chat request")
+        print(f"Error processing chat request {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 

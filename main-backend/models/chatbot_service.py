@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Download NLTK resources (once)
 nltk.download("punkt")
 nltk.download("wordnet")
-
+nltk.download('punkt_tab')
 
 # Paths
 INTENTS_PATH = os.path.join(BASE_DIR, "intents.json")

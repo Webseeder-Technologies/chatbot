@@ -1,6 +1,0 @@
-reviews:
-  auto_review:
-    enabled: true       # automatically review PRs
-    drafts: false       # post real comments (not just drafts)
-  profile: "chill"      # review style: "chill", "balanced", or "strict"
-  
