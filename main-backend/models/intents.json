@@ -353,15 +353,17 @@
 
 {
   "tag": "more_about_anything",
-  "patterns": [
+"patterns": [
     "Want to know more about your services",
     "Want to know more about webseeder?",
     "more",
     "More?",
+    "Tell me more",
+    "More details",
     "Can you please tell in detail?",
-    "Explain"
-    
-  ],
+    "Explain",
+    "Explain more"
+   ],
   "responses": [
     "Sure! Please specify which service or aspect you would like to know more about: Website Development, App Development, Custom Software, AI/ML, Blockchain, or Digital Marketing?",
     "I'd be happy to provide more details! Which area are you interested in learning more about?",
