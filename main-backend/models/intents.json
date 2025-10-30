@@ -116,6 +116,7 @@
     "What services do you provide?",
     "what are your services?",
     "service",
+    "service?",
     "services?",
     "what all services are provided by u",
     "Tell me about your services",
@@ -136,7 +137,12 @@
   "responses": [
     "We provide a complete range of digital services at WebSeeder, including:\n\n- 🌐 **Website Development**\n- 📱 **Hybrid Application Development**\n- 💻 **Custom Software Development & Automation**\n- 🤖 **AI & Machine Learning Solutions**\n- ⛓️ **Blockchain Development**\n- 🎯 **Branding & Digital Marketing**\n\nWould you like me to explain one of these in detail?",
     "At WebSeeder, we help businesses grow with services like:\n✅ Website Development\n✅ Hybrid Mobile Applications\n✅ Custom Software & Automation\n✅ AI/ML-powered solutions\n✅ Blockchain Development\n✅ Branding & Digital Marketing\n\nWhich of these would you like to know more about?",
-    "Our services include:\n1. Website Development\n2. Hybrid Application Development\n3. Custom Software Development & Automation\n4. AI & Machine Learning Solutions\n5. Blockchain Development\n6. Branding & Digital Marketing\n\nWe tailor each service to your unique business needs 🚀"
+    "Our services include:\n1. Website Development\n2. Hybrid Application Development\n3. Custom Software Development & Automation\n4. AI & Machine Learning Solutions\n5. Blockchain Development\n6. Branding & Digital Marketing\n\nWe tailor each service to your unique business needs 🚀",
+    "At WebSeeder, we offer a diverse range of digital transformation services:\n\n🔹 Website Design & Development\n🔹 Hybrid App Creation\n🔹 Custom Software & Automation Solutions\n🔹 AI + Machine Learning Integration\n🔹 Blockchain Solutions\n🔹 Branding & Digital Marketing\n\nWould you like me to share more details about any of these services?",
+    "At WebSeeder, we help your business grow through innovative digital solutions:\n\n1️⃣ Website Development\n2️⃣ Hybrid Mobile Application Development\n3️⃣ Custom Software & Business Automation\n4️⃣ Artificial Intelligence & Machine Learning Services\n5️⃣ Blockchain-based Application Development\n6️⃣ Branding, SEO & Digital Marketing\n\nWhich of these areas interests you the most?",
+    "Here’s what we do at WebSeeder to empower your business digitally:\n\n◆ Website Development\n◆ Hybrid App Development\n◆ Custom Software & Automation Tools\n◆ AI/ML-driven Solutions\n◆ Blockchain Development\n◆ Branding & Growth Marketing\n\nEach service is designed to suit your specific business goals. Would you like me to explain one of them in detail?",
+    "We specialize in a variety of digital services to help your business thrive:\n\n- Website Development\n- Hybrid Application Development\n- Custom Software & Automation\n- AI & Machine Learning Solutions\n- Blockchain Development\n- Branding & Digital Marketing\n\nFeel free to ask for more details on any of these services!"
+
   ]
 },
 {
@@ -350,6 +356,32 @@
     "We offer support agreements based on response time, uptime, and criticality — customizable for every business."
 ]
 },
+
+{
+  "tag": "more_about_anything",
+"patterns": [
+    "Want to know more about your services",
+    "Want to know more about webseeder?",
+    "more",
+    "More?",
+    "More details please",
+    "Tell me more",
+    "More details",
+    "Can you please tell in detail?",
+    "Explain",
+    "Explain more"
+   ],
+  "responses": [
+    "Sure! Please specify which service or aspect you would like to know more about: Website Development, App Development, Custom Software, AI/ML, Blockchain, or Digital Marketing?",
+    "I'd be happy to provide more details! Which area are you interested in learning more about?",
+    "Of course! Let me know which specific service or topic you'd like more information on.",
+    "Absolutely! Please tell me which service or topic you want to dive deeper into.",
+    "Certainly! Just let me know which service or topic you'd like more details about.",
+    "I'd love to share more! Which specific service or area are you curious about?",
+    "Definitely! Please specify the service or topic you'd like to explore further."
+  ]
+},
+
 {
   "tag": "about_web_development",
   "patterns": [
