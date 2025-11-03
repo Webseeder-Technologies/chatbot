@@ -64,7 +64,9 @@
         "Is WebSeeder a software company?",
         "What’s your company vision?",
         "Are you a digital agency?",
-        "What makes WebSeeder different?"
+        "What makes WebSeeder different?",
+        "what your comapany do?",
+        "what is your comapany about?"
       ],
       "responses": [
         "WebSeeder is a digital solutions company offering web development, app development, and marketing services.",
@@ -177,6 +179,7 @@
   "patterns": [
     "Do you have job openings?",
     "Careers",
+    "career?",
     "internship?",
     "Can I work at WebSeeder?",
     "Hiring",
@@ -200,7 +203,11 @@
     "We welcome talented individuals! Please keep an eye on our website for current openings.",
     "We’re always on the lookout for passionate professionals — check out our job listings!",
     "Whether you’re experienced or a fresher, we might have the right opportunity for you!",
-    "Our team is growing! Visit our Careers page to see where you fit in."
+    "Our team is growing! Visit our Careers page to see where you fit in.",
+    "We offer internships and full-time roles. Check our website for the latest opportunities.",
+    "Join our dynamic team! Visit http://www.webseeder.in/careers to explore openings.",
+    "We value fresh talent and experienced pros alike. See our job openings online!",
+    "Looking to start or grow your career? Check our careers page for available positions."
   ]
 },
 {
@@ -256,7 +263,8 @@
     "Is WebSeeder reliable?",
     "How is WebSeeder better than other agencies?",
     "Why would I hire WebSeeder?",
-    "Why do companies choose WebSeeder?"
+    "Why do companies choose WebSeeder?",
+    "Why we should choose this company?"
   ],
   "responses": [
     "Choose WebSeeder because they provide innovative solutions, are customer‑centric, result‑driven, and serve as a one-stop shop for all your digital needs.",
@@ -369,16 +377,17 @@
     "More details",
     "Can you please tell in detail?",
     "Explain",
-    "Explain more"
+    "Explain more",
+    "details",
+    "elaborate",
+    "can you please elaborate?"
    ],
   "responses": [
-    "Sure! Please specify which service or aspect you would like to know more about: Website Development, App Development, Custom Software, AI/ML, Blockchain, or Digital Marketing?",
-    "I'd be happy to provide more details! Which area are you interested in learning more about?",
-    "Of course! Let me know which specific service or topic you'd like more information on.",
-    "Absolutely! Please tell me which service or topic you want to dive deeper into.",
-    "Certainly! Just let me know which service or topic you'd like more details about.",
-    "I'd love to share more! Which specific service or area are you curious about?",
-    "Definitely! Please specify the service or topic you'd like to explore further."
+    "We provide Website, App, and Custom Software Development plus AI/ML and Digital Marketing. Visit https://www.webseeder.in for details.",
+    "We build websites, apps, custom software, and ML-driven solutions. More at https://www.webseeder.in.",
+    "WebSeeder offers end-to-end digital products (web, mobile, AI). For full details: https://www.webseeder.in.",
+    "We do Website & App development, AI/ML, Blockchain, and Digital Marketing. Learn more here: https://www.webseeder.in.",
+    "WebSeeder creates websites, apps, custom software, and AI solutions. Explore more at https://www.webseeder.in."
   ]
 },
 
