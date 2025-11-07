@@ -64,7 +64,9 @@
         "Is WebSeeder a software company?",
         "What’s your company vision?",
         "Are you a digital agency?",
-        "What makes WebSeeder different?"
+        "What makes WebSeeder different?",
+        "what your comapany do?",
+        "what is your comapany about?"
       ],
       "responses": [
         "WebSeeder is a digital solutions company offering web development, app development, and marketing services.",
@@ -116,6 +118,7 @@
     "What services do you provide?",
     "what are your services?",
     "service",
+    "service?",
     "services?",
     "what all services are provided by u",
     "Tell me about your services",
@@ -136,7 +139,12 @@
   "responses": [
     "We provide a complete range of digital services at WebSeeder, including:\n\n- 🌐 **Website Development**\n- 📱 **Hybrid Application Development**\n- 💻 **Custom Software Development & Automation**\n- 🤖 **AI & Machine Learning Solutions**\n- ⛓️ **Blockchain Development**\n- 🎯 **Branding & Digital Marketing**\n\nWould you like me to explain one of these in detail?",
     "At WebSeeder, we help businesses grow with services like:\n✅ Website Development\n✅ Hybrid Mobile Applications\n✅ Custom Software & Automation\n✅ AI/ML-powered solutions\n✅ Blockchain Development\n✅ Branding & Digital Marketing\n\nWhich of these would you like to know more about?",
-    "Our services include:\n1. Website Development\n2. Hybrid Application Development\n3. Custom Software Development & Automation\n4. AI & Machine Learning Solutions\n5. Blockchain Development\n6. Branding & Digital Marketing\n\nWe tailor each service to your unique business needs 🚀"
+    "Our services include:\n1. Website Development\n2. Hybrid Application Development\n3. Custom Software Development & Automation\n4. AI & Machine Learning Solutions\n5. Blockchain Development\n6. Branding & Digital Marketing\n\nWe tailor each service to your unique business needs 🚀",
+    "At WebSeeder, we offer a diverse range of digital transformation services:\n\n🔹 Website Design & Development\n🔹 Hybrid App Creation\n🔹 Custom Software & Automation Solutions\n🔹 AI + Machine Learning Integration\n🔹 Blockchain Solutions\n🔹 Branding & Digital Marketing\n\nWould you like me to share more details about any of these services?",
+    "At WebSeeder, we help your business grow through innovative digital solutions:\n\n1️⃣ Website Development\n2️⃣ Hybrid Mobile Application Development\n3️⃣ Custom Software & Business Automation\n4️⃣ Artificial Intelligence & Machine Learning Services\n5️⃣ Blockchain-based Application Development\n6️⃣ Branding, SEO & Digital Marketing\n\nWhich of these areas interests you the most?",
+    "Here’s what we do at WebSeeder to empower your business digitally:\n\n◆ Website Development\n◆ Hybrid App Development\n◆ Custom Software & Automation Tools\n◆ AI/ML-driven Solutions\n◆ Blockchain Development\n◆ Branding & Growth Marketing\n\nEach service is designed to suit your specific business goals. Would you like me to explain one of them in detail?",
+    "We specialize in a variety of digital services to help your business thrive:\n\n- Website Development\n- Hybrid Application Development\n- Custom Software & Automation\n- AI & Machine Learning Solutions\n- Blockchain Development\n- Branding & Digital Marketing\n\nFeel free to ask for more details on any of these services!"
+
   ]
 },
 {
@@ -171,6 +179,9 @@
   "patterns": [
     "Do you have job openings?",
     "Careers",
+    "career?",
+    "What are the career opportunities?",
+    "job openings?",
     "internship?",
     "Can I work at WebSeeder?",
     "Hiring",
@@ -194,7 +205,11 @@
     "We welcome talented individuals! Please keep an eye on our website for current openings.",
     "We’re always on the lookout for passionate professionals — check out our job listings!",
     "Whether you’re experienced or a fresher, we might have the right opportunity for you!",
-    "Our team is growing! Visit our Careers page to see where you fit in."
+    "Our team is growing! Visit our Careers page to see where you fit in.",
+    "We offer internships and full-time roles. Check our website for the latest opportunities.",
+    "Join our dynamic team! Visit http://www.webseeder.in/careers to explore openings.",
+    "We value fresh talent and experienced pros alike. See our job openings online!",
+    "Looking to start or grow your career? Check our careers page for available positions."
   ]
 },
 {
@@ -250,7 +265,8 @@
     "Is WebSeeder reliable?",
     "How is WebSeeder better than other agencies?",
     "Why would I hire WebSeeder?",
-    "Why do companies choose WebSeeder?"
+    "Why do companies choose WebSeeder?",
+    "Why we should choose this company?"
   ],
   "responses": [
     "Choose WebSeeder because they provide innovative solutions, are customer‑centric, result‑driven, and serve as a one-stop shop for all your digital needs.",
@@ -350,6 +366,33 @@
     "We offer support agreements based on response time, uptime, and criticality — customizable for every business."
 ]
 },
+
+{
+  "tag": "more_about_anything",
+"patterns": [
+    "Want to know more about your services",
+    "Want to know more about webseeder?",
+    "more",
+    "More?",
+    "More details please",
+    "Tell me more",
+    "More details",
+    "Can you please tell in detail?",
+    "Explain",
+    "Explain more",
+    "details",
+    "elaborate",
+    "can you please elaborate?"
+   ],
+  "responses": [
+    "We provide Website, App, and Custom Software Development plus AI/ML and Digital Marketing. Visit https://www.webseeder.in for details.",
+    "We build websites, apps, custom software, and ML-driven solutions. More at https://www.webseeder.in.",
+    "WebSeeder offers end-to-end digital products (web, mobile, AI). For full details: https://www.webseeder.in.",
+    "We do Website & App development, AI/ML, Blockchain, and Digital Marketing. Learn more here: https://www.webseeder.in.",
+    "WebSeeder creates websites, apps, custom software, and AI solutions. Explore more at https://www.webseeder.in."
+  ]
+},
+
 {
   "tag": "about_web_development",
   "patterns": [

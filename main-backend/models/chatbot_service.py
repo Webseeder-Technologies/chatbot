@@ -29,6 +29,8 @@ words = pickle.load(open(os.path.join(BASE_DIR, "words.pkl"), "rb"))
 classes = pickle.load(open(os.path.join(BASE_DIR, "classes.pkl"), "rb"))
 model = load_model(os.path.join(BASE_DIR, "chatbot_webseedermodel.keras"))
 
+context = {"last_intent": None}
+
 # Preprocess sentence
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -73,6 +75,15 @@ def get_response(user_input):
         ])
 
     tag = intents_list[0]["intent"]
+
+    if tag == "more_about_anything":
+        if context["last_intent"] == "more_about_anything":
+            return "I've already shared the main details — please visit https://www.webseeder.in for full info."
+
+        context["last_intent"] = "more_about_anything"
+
+    else:
+        context["last_intent"] = tag
     for intent in intents["intents"]:
         if intent["tag"] == tag:
             return random.choice(intent["responses"])
