@@ -90,16 +90,11 @@
     .btn-send:hover {
       background-color: #1e40af;
     }
-
-    @media (max-width: 768px) {
-      .chat-container {
-        height: 90vh;
-        max-width: 95%;
-      }
-    }
   </style>
 </head>
+
 <body>
+
   <div class="chat-container">
     <div class="chat-header">💬 WebSeeder Chatbot</div>
 
@@ -116,35 +111,46 @@
     const input = document.getElementById('messageInput');
     const sendBtn = document.getElementById('sendBtn');
 
-    const socket = new WebSocket("ws://127.0.0.1:5700/ws/chat");
+    let socket;
 
-    socket.onopen = () => {
-      console.log("✅ Connected to WebSocket server");
-      addBotMessage("Hello! 👋 I'm WebSeeder's chatbot. How can I help you today?");
-    };
+    function connectWebSocket() {
+      socket = new WebSocket("ws://127.0.0.1:5700/ws/chat");
 
-    socket.onmessage = (event) => {
-      const formattedText = event.data
-        .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // bold
-        .replace(/\n/g, "<br>"); // line breaks
-      addBotMessage(formattedText);
-    };
+      socket.onopen = () => {
+        console.log("✅ Connected");
+        addBotMessage("Hello! 👋 I'm WebSeeder's chatbot. How can I help you today?");
+      };
 
-    socket.onclose = () => {
-      console.warn("⚠️ Disconnected from WebSocket server");
-      addBotMessage("⚠️ Connection lost. Please refresh the page.");
-    };
+      socket.onmessage = (event) => {
+        const formatted = event.data
+          .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+          .replace(/\n/g, "<br>");
+        addBotMessage(formatted);
+      };
+
+      socket.onclose = () => {
+        addBotMessage("⚠️ Disconnected. Trying to reconnect...");
+        setTimeout(connectWebSocket, 2000);
+      };
+    }
+
+    connectWebSocket();
 
     sendBtn.addEventListener('click', sendMessage);
-    input.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendMessage();
-    });
+    input.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
 
     function sendMessage() {
       const message = input.value.trim();
-      if (message === "") return;
+      if (!message) return;
+
       addUserMessage(message);
-      socket.send(message);
+
+      if (socket.readyState === WebSocket.OPEN) {
+        socket.send(message);
+      } else {
+        addBotMessage("⚠️ Unable to send. Connection not active.");
+      }
+
       input.value = "";
     }
 
@@ -156,13 +162,14 @@
       chatBox.scrollTop = chatBox.scrollHeight;
     }
 
-    function addBotMessage(htmlText) {
+    function addBotMessage(html) {
       const msg = document.createElement('div');
       msg.classList.add('message', 'bot-message');
-      msg.innerHTML = htmlText; 
+      msg.innerHTML = html;
       chatBox.appendChild(msg);
       chatBox.scrollTop = chatBox.scrollHeight;
     }
   </script>
+
 </body>
 </html>

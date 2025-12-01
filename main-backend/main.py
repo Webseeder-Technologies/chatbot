@@ -1,63 +1,59 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
-from fastapi.security import HTTPBearer
-from brotli_asgi import BrotliMiddleware  # https://github.com/fullonic/brotli-asgi
+from fastapi.staticfiles import StaticFiles
+from brotli_asgi import BrotliMiddleware
 
+from api import router
+from utils.db import save_message
+from utils.estimator import estimate_project
 
 app = FastAPI()
 
+# Include API Routes
+app.include_router(router)
 
+# Serve Frontend at ROOT
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
-
-# allow cors - from https://fastapi.tiangolo.com/tutorial/cors/
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    expose_headers=["X-Filename", "x-filename"]
 )
 
-# enable Brotli compression. Better for json payloads, supported by most browsers. Fallback to gzip by default. from https://github.com/fullonic/brotli-asgi
+# Brotli compression
 app.add_middleware(BrotliMiddleware)
 
 
-# Health check
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    html_content = """
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Backend Status</title>
-            <style>
-                body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f4f4f4; }
-                h1 { color: #2c3e50; }
-                a { text-decoration: none; color: white; background-color: #007BFF; padding: 10px 20px; border-radius: 5px; }
-                a:hover { background-color: #0056b3; }
-            </style>
-        </head>
-        <body>
-            <h1>🚀 Everything is working!</h1>
-            <p>Welcome to the Python World</p>
-            <a href="/docs">Go to API Docs</a>
-        </body>
-    </html>
-    """
-    return html_content
+# --------------------------------
+#         WEBSOCKET CHAT
+# --------------------------------
+@app.websocket("/ws/chat")
+async def websocket_chat(websocket: WebSocket):
+    await websocket.accept()
 
+    try:
+        while True:
+            user_msg = await websocket.receive_text()
+            save_message("user", user_msg)
 
-# for Authorization: Bearer token header
-# security = HTTPBearer()
+            # Check estimator
+            estimate = estimate_project(user_msg)
+            if estimate:
+                bot_reply = (
+                    f"<b>Project:</b> {estimate['project']}<br>"
+                    f"<b>Estimated Time:</b> {estimate['time']}<br>"
+                    f"<b>Features:</b><br>• "
+                    + "<br>• ".join(estimate["features"])
+                )
+            else:
+                bot_reply = f"You said: {user_msg}"
 
-# can add modules having api calls below
-# example : 
-# import module_name
-import api
+            save_message("bot", bot_reply)
+            await websocket.send_text(bot_reply)
 
-# initiate
-# api_roles.get_admin_apis()
-# imp: This function needs to be called at the very last AFTER all the py modules are loaded.
-# Because it HALTS the openapi generation process and it doesn't include subsequent loaded api calls into the apidoc, even though they're active.
+    except WebSocketDisconnect:
+        print("Client Disconnected")

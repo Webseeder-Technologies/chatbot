@@ -4,3 +4,4 @@ brotli-asgi
 numpy
 tensorflow-cpu
 nltk
+pymongo

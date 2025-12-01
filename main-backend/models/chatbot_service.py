@@ -6,6 +6,8 @@ import os
 import nltk
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
+from utils.db import save_message
+
 
 lemmatizer = WordNetLemmatizer()
 

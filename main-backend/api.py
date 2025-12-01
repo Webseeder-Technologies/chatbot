@@ -1,35 +1,65 @@
-from fastapi import WebSocket, WebSocketDisconnect, HTTPException
-from main import app
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, HTTPException
 from pydantic import BaseModel
-from models.chatbot_service import get_response   
+from models.chatbot_service import get_response
 
-# Request model
+# NEW IMPORTS FOR DB + ESTIMATOR
+from utils.db import save_message
+from utils.estimator import estimate_project
+
+router = APIRouter()
+
+
 class Message(BaseModel):
     message: str
 
 
-#  REST API Endpoint
-@app.post("/chat")
+# ------------- REST API ENDPOINT -------------
+@router.post("/chat")
 async def chat(msg: Message):
     try:
-        response = get_response(msg.message)
-        return {"response": response}
+        user_message = msg.message
+        save_message("user", user_message)
+
+        estimate = estimate_project(user_message)
+        if estimate:
+            bot_reply = (
+                f"<b>Project:</b> {estimate['project']}<br>"
+                f"<b>Estimated Time:</b> {estimate['time']}<br>"
+                f"<b>Features:</b><br>• " + "<br>• ".join(estimate["features"])
+            )
+        else:
+            bot_reply = get_response(user_message)
+
+        save_message("bot", bot_reply)
+        return {"response": bot_reply}
+
     except ValueError as e:
-        print(f"Invalid input: {e}")
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        print(f"Error processing chat request {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-#  WebSocket Endpoint
-@app.websocket("/ws/chat")
+# ------------- WEBSOCKET ENDPOINT -------------
+@router.websocket("/ws/chat")
 async def websocket_chat(websocket: WebSocket):
     await websocket.accept()
     try:
         while True:
             data = await websocket.receive_text()
-            response = get_response(data)
-            await websocket.send_text(response)
+            save_message("user", data)
+
+            estimate = estimate_project(data)
+            if estimate:
+                reply = (
+                    f"<b>Project:</b> {estimate['project']}<br>"
+                    f"<b>Estimated Time:</b> {estimate['time']}<br>"
+                    f"<b>Features:</b><br>• " + "<br>• ".join(estimate["features"])
+                )
+            else:
+                reply = get_response(data)
+
+            save_message("bot", reply)
+            await websocket.send_text(reply)
+
     except WebSocketDisconnect:
-        print("Client disconnected from WebSocket")
+        print("Client disconnected")
